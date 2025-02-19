@@ -78,13 +78,14 @@ app.post('/messages/save', async (req, res) => {
     })
   }
 })
-const path = require('path');
-app.use('/public', express.static(path.join(__dirname, 'front-end', 'public')));
 
-app.get('/app', async (req, res) => {
+const path = require('path');
+app.use('/public', express.static(path.join(__dirname, '/public')));
+app.get('/aboutme', async (req, res) => {
   const aboutMeSpecs = {
     name: "Emily Yang",
-    description: `Hi, my name is Emily Yang. I am a third year student at New York University majoring in Computer Science. My main interests lie in software engineering and full-stack development. I also have experience in UI-UX and Information Technology. I am passionate about problem solving and creating innovative solutions.`,
+    description: `Hi, my name is Emily Yang. I am a third year student at New York University majoring in Computer Science. My main interests lie in software engineering and full-stack development. I also have experience in UI-UX and Information Technology. I am passionate about problem solving and creating innovative solutions.
+    I am a student ambassador for IBM's Z mainframe technology. I am skilled at coding with C++, C, Java, Python, Javascript, and SQL`,
     hobbies: [
       {
         title: "Ornithology",
@@ -93,10 +94,10 @@ app.get('/app', async (req, res) => {
       {
         title: "Analog Photography",
         description: `I also really enjoy analog photography. I have developed my own films and printed them in a dark room before. My favorite camera is the Olympus OM-1. Spending time in the dark room teaches me patience and tenacity.`,
-      }
+      },
     ],
-    image: '/public/IMG_6839.JPG',
-  }
+    image: 'http://localhost:5002/public/IMG_6839.JPG',
+  };
   res.json(aboutMeSpecs);
 });
 
