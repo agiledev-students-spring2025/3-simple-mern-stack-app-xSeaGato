@@ -13,6 +13,10 @@ const Home = props => {
       <p>This is a full MERN-stack app, whether you like it or not!</p>
       <p>
         Check out the <Link to="/messages">messages page</Link>.
+
+      </p>
+      <p>
+        Check out the <Link to="/aboutme">About me page</Link>.
       </p>
     </>
   )
